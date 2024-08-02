@@ -4,7 +4,8 @@ from .models import Car
 from .forms import CarForm
 
 # Create your views here.
-
+def home(request):
+    return render(request,'index.html')
 
 def car_list(request):
     cars = Car.objects.all()
