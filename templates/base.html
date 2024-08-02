@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Car Sales{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/st.css'%}"> 
+    
+     <link rel="stylesheet" href="{% static 'css/sty.css'%}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <!-- font awesone cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+    <header class="header">
+        <nav id="main_menu">
+            <a href="{% url 'car_list' %}" class="logo"><span>car</span>salse</a>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'car_list' %}">Cars</a></li>
+                <li><a href="{% url 'user_orders' %}">My Orders</a></li>
+
+                {% if user.is_staff %}
+                <li><a href="{% url 'add_car' %}">Add Car</a></li>
+                <li><a href="{% url 'order_list' %}">Admin Dashboard</a></li>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Content of the page -->
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+   <!-- footer section starts -->
+   <section class="footer">
+    <div class="boxx-container">
+        <div class="boxx">
+            <h3>our branches</h3>
+        <a href=""><i class="fas fa-map-marker-alt"></i>bangladesh</a>
+        <a href=""><i class="fas fa-map-marker-alt"></i>india</a>
+        <a href=""><i class="fas fa-map-marker-alt"></i>france</a>
+        <a href=""><i class="fas fa-map-marker-alt"></i>australia</a>
+        <a href=""><i class="fas fa-map-marker-alt"></i>russia</a>
+        </div>
+        <div class="boxx">
+            <h3>quick links</h3>
+            <a href=""><i class="fas fa-arrow-right"></i>home</a>
+            <a href=""><i class="fas fa-arrow-right"></i>vehivles</a>
+            <a href=""><i class="fas fa-arrow-right"></i>services</a>
+            <a href=""><i class="fas fa-arrow-right"></i>featured</a>
+            <a href=""><i class="fas fa-arrow-right"></i>review</a>
+        
+        </div>
+        <div class="boxx">
+            <h3>our branches</h3>
+           <a href=""><i class="fas fa-phone"></i>+123-456-7890</a>
+           <a href=""><i class="fas fa-phone"></i>+123-458-7890</a>
+           <a href=""><i class="fas fa-envelope"></i>abc@gmail.com</a>
+           <a href=""><i class="fas fa-map-marker-alt"></i>dhaka,bangladesh</a>
+        
+        </div>
+        <div class="boxx">
+            <h3>our branches</h3>
+            <a href=""><i class="fab fa-facebook-f"></i>facebook</a>
+            <a href=""><i class="fab fa-twitter"></i>twitter</a>
+            <a href=""><i class="fab fa-instagram"></i>instagram</a>
+            <a href=""><i class="fab fa-linkedin"></i>linkedin</a>
+          
+        
+        </div>
+    </div>
+    <div class="credit"><p>&copy; 2024 Car Sales. All rights reserved.</p></div>
+</section>
+  
+  <!-- footer section ends -->
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

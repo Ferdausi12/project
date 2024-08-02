@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<h1>Admin Dashboard</h1>
+<h1>Order List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Car</th>
+                <th>User</th>
+                <th>Buyer Name</th>
+                <th>Buyer Email</th>
+                <th>Status</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Ordered At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.car.title }}</td>
+                <td>{{ order.user.username }}</td>
+                <td>{{ order.buyer_name }}</td>
+                <td>{{ order.buyer_email }}</td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>${{ order.total_price }}</td>
+                <td>{{ order.ordered_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Manage Orders</h2>
+    <p><a href="{% url 'admin:orders_order_changelist' %}">Go to Order Management</a></p>
+   
+{% endblock %}

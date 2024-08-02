@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}My Orders{% endblock %}
+
+{% block content %}
+<h1>Order History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Car</th>
+                <th>Buyer Name</th>
+                <th>Buyer Email</th>
+                <th>Status</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Ordered At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.car.title }}</td>
+                <td>{{ order.buyer_name }}</td>
+                <td>{{ order.buyer_email }}</td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>${{ order.total_price }}</td>
+                <td>{{ order.ordered_at }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8">You have no order history.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+{% endblock %}

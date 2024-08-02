@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Place Order{% endblock %}
+
+{% block content %}
+<div class="box">
+    <div class="container ">
+        <h2 class="heading">Place Order</h2>
+        <!-- Order form -->
+        <form id="orderForm" method="post" action="{% url 'process_order' car.id %}">
+    
+            {% csrf_token %}
+            <!-- Form fields -->
+            <div class="form-group">
+                <label for="buyer_name">Your Name</label>
+                <input type="text" id="buyer_name" name="buyer_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="buyer_email">Your Email</label>
+                <input type="email" id="buyer_email" name="buyer_email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" class="form-control" required>
+            </div>
+            <button type="submit" class="btnn">Place Order</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,222 @@
+
+:root{
+    --yellow:#f9d806;
+    --light-yellow:#ffee80;
+    --black:#130f40;
+    --light-colour:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow:0.5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+main{
+    margin-top: 5rem;
+}
+
+
+.btnn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    background-color: var(--light-yellow);
+    color: var(--black);
+    font-weight: 500;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+.btnn:hover{
+    background-color: var(--yellow);
+    text-decoration: none;
+    color: var(--black);
+}
+
+
+
+
+/* add car styles  */
+
+.box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.col {
+    flex: 1;
+    padding: 10px;
+}
+
+
+h1 {
+    padding-top: 10px;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form p {
+    margin: 10px 0;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input, 
+form select, 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+/* admin table  */
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* card  */
+.card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    /* margin-bottom: 5rem; */
+    /* margin-top: 5rem; */
+}
+
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.card-text {
+    font-size: 1.6rem;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    border-top: var(--border);
+    color: var(--light-colour);
+}
+.price{
+    font-size: 2.5rem;
+    color: var(--yellow);
+    padding: 1rem 0;
+    font-weight: bolder;
+}
+
+
+/* register  */
+
+
+
+/* Row and Column Layout */
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.col {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Heading */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form p {
+    margin: 10px 0;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input, 
+form select, 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+

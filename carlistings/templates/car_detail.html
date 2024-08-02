@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ car.title }}{% endblock %}
+
+{% block content %}
+   <div class="box">
+    <article class="car-detail">
+        
+        <img src="{{ car.image.url }}" alt="{{ car.title }}" class="car-image">
+        <h5 class="card-title">{{ car.title }}</h5>
+        <p class="card-text">{{ car.description }}</p>
+        <p class="price">Price: ${{ car.price }}</p>
+        {% if user.is_authenticated %}
+            <a href="{% url 'place_order' car.id %}" class="btnn ">Buy Now</a>
+           
+        {% else %}
+            <p>Please <a href="{% url 'login' %}">login</a> to place an order.</p>
+        {% endif %}
+    </article>
+   </div>
+{% endblock %}

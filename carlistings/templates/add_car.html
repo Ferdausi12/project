@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Add New Car{% endblock %}
+
+{% block content %}
+   <div class="box">
+    <div class="row">
+        <div class="col">
+            <h1>Add New Car</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btnn">Add Car</button>
+            </form>
+        </div>
+    </div>
+   </div>
+{% endblock %}
