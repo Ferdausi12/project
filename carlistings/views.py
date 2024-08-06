@@ -6,7 +6,8 @@ from .forms import CarForm
 # Create your views here.
 
 
-
+def home(request):
+    return render(request,'home.html')
 
 
 def car_list(request):
